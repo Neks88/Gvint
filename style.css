@@ -1,0 +1,801 @@
+* {
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+:root {
+   
+    --primaryColor:#f02a2a;
+    --mainDark:#1c1d1c;
+    --mainWhite:#fff;
+    --mainGrey:#e5e5e5;
+    --mainTransition: all 0.5s ease-in-out;
+    --letterSpacing: 0.5rem;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+    
+    line-height: 1.5;
+}
+
+/* #################################nav button ########################### */
+
+  
+#menu-btn {
+    width: 51px;
+
+  padding: 5px;
+  /* border: 2px solid var(--primaryColor); */
+  cursor: pointer;
+  /* align-self: center; */
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  height: 5px;
+  width: 35px;
+  background-color: var(--mainWhite);
+  margin: 5px 0;
+  transition: transform 1s ease;
+}
+
+.turn .bar1 {
+  transform: rotate(-45deg) translate(-7px, 6px);
+}
+
+.turn .bar2 {
+  opacity: 0;
+}
+
+.turn .bar3 {
+  transform: rotate(45deg) translate(-7px, -8px);
+}
+
+/*##################################################3 end of nav button####################################### */
+
+.logo-and-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--mainDark);
+
+
+}
+
+nav {
+    /* border-top: 8px solid var(--mainWhite); */
+}
+
+.nav-links {
+    list-style-type: none;
+    display: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color:var(--mainWhite);
+    display: block;
+    background: var(--mainDark);
+    padding: 10px;
+    font-size: 20px;
+    transition: all 1s ease-in-out;
+
+}
+
+.nav-links li a:hover {
+    background: var(--primaryColor);
+    color: var(--mainDark);
+    /* padding-left: 20px;  */
+}
+.omotac-logoa img {
+    height: 100px;
+    /* background: var(--mainWhite); */
+}
+
+.nav-icons {
+    display: flex;
+  
+}
+
+.nav-icons a {
+     flex:1 0 auto;
+     text-align: center;
+}
+
+.new-nav {
+    position: fixed;
+    width:100vw;
+    z-index: 10 !important;
+    opacity: 0.8;
+}
+
+@media screen and (min-width:979px) {
+    nav {
+        display: flex;
+        /* justify-content: space-between; */
+        background: var(--mainDark);
+    
+    }
+    #menu-btn {
+        display: none;
+    }
+    .nav-links {
+        flex:1 0 auto;
+        display: flex !important;
+        align-self: center;
+        flex-wrap: wrap;
+        padding: 10px;
+        
+    }
+    .nav-links li {
+        flex: 1 0 100px;
+        align-self: center;
+        text-align: center;
+    }
+
+    .nav-icons {
+        display: flex !important;
+        flex:0 0 auto;
+    }
+    .nav-links li a:hover {
+        background: var(--primaryColor);
+        color: var(--mainDark);
+        padding-left: 10px; 
+        border-radius: 5px;
+    }
+}
+
+
+/* .nesot {
+    height: 1000vh;
+} */
+
+/* ############################header############################ */
+
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.banner {
+    flex:1 0 auto;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)),url("img/pexels-photo-1267265.jpeg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-container {
+    text-align: center;
+}
+
+.banner-container h2{
+    color: var(--primaryColor);
+    font-weight: 300;
+    margin-bottom: 1rem;
+    /* letter-spacing: var(--letterSpacing); */
+    animation: slideFromLeft 3s ease-in-out 1;
+    font-size: 1rem;
+
+}
+
+
+.banner-container h1{
+    color: var(--mainWhite);
+    font-weight: 300;
+    font-size: 3rem;
+    
+    /* letter-spacing: var(--letterSpacing); */
+    text-transform: uppercase;
+   
+    animation: slideFromRight 3s ease-in-out 1;
+
+
+}
+
+.banner-link {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--primaryColor);
+    font-size: 1.3rem;
+    /* background: var(--primaryColor); */
+    padding: .5rem 1.5rem;
+    opacity: 0.8;
+   border: 2px solid var(--primaryColor);
+    margin-top:1rem;
+    animation: show 3s ease-in-out 1;
+}
+
+
+
+
+@keyframes show {
+    0% {
+      transform: scale(2);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+  }
+
+  
+  @keyframes slideFromRight {
+    0% {
+    transform:translateX(1000px);
+    }
+
+    50% {
+      transform:translateX(-200px);
+      }
+
+    75% {
+        transform:translateX(50px);
+        }
+    100% {
+      transform:translateX(0px);
+    }
+  }
+
+  @keyframes slideFromLeft {
+    0% {
+    transform:translateX(-1000px);
+    }
+
+    50% {
+      transform:translateX(200px);
+      }
+
+    75% {
+        transform:translateX(-50px);
+        }
+    100% {
+      transform:translateX(0px);
+    }
+  }
+
+
+  @media screen and (min-width:576px) {
+      .banner-container h2 {
+          letter-spacing: var(--letterSpacing);
+      }
+
+      .banner-container h1 {
+          letter-spacing: var(--letterSpacing);
+      }
+      .banner-link {
+          padding: .8rem 2rem;
+      }
+  }
+  /* ikonice */
+  .skills {
+    /* background: linear-gradient(rgba(255,255,255, 0.6), rgba(255,255,255, 0.6)), url("img/gvint-pivara.png"); */
+      background: var(--mainGrey);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
+      padding: 3rem;
+  }
+
+  .skill {
+      color:var(--mainWhite);
+      text-align: center;
+      /* border: 2px solid var(--mainWhite); */
+      margin-bottom:1rem; 
+      padding: 1rem;
+      
+  }
+
+  .skill-title {
+      margin-bottom: 1rem;
+      font-weight: 300;
+  }
+/* .skill i {
+    font-size: 2rem;
+   
+} */
+
+.skill i {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+    color:#575454;
+}
+  .skill h2{
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+  }
+
+  .skill p {
+      text-align: justify;
+      font-weight: 300;
+      letter-spacing: 1px;
+      color: rgb(68, 65, 65);
+  }
+
+  .red-text {
+      color:var(--primaryColor);
+  }
+
+  @media screen and (min-width:776px) {
+      .skills {
+          display: flex;
+          flex-wrap: wrap;
+      }
+
+      .skill {
+          flex:0 0 calc(50% - 1rem);
+      }
+  }
+
+  @media screen and (min-width:992px) {
+   
+
+    .skill {
+        flex:0 0 calc(25% - 1rem);
+    }
+}
+
+  /* #############glavni naslovi######################## */
+  .title {
+      display: flex;    
+      margin-left: 1rem;
+      margin-bottom: 5rem;
+
+  }
+
+  .title h1 {
+      font-weight: 300;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+
+  }
+
+  .title i {
+      align-self: center;
+      font-size: 4rem;
+      color:var(--primaryColor);
+      margin-right: .5rem;
+      border-right: 3px solid grey;
+      padding-right: 0.5rem;
+  }
+
+  /* ################glani naslovi ende######################### */
+
+  .usluga {
+      background: linear-gradient(rgba(255,255,255, 0.9), rgba(255,255,255, 0.9)), url("img/gvint-pivara.png");
+    
+  }
+.omotac-usluga {
+    width: 90%;
+    margin:0 auto;
+}
+  .usluga-1 {
+      margin-bottom: 3rem;
+  }
+
+  .usluga-1 i {
+      font-size: 2rem;
+padding: 3rem;
+background: var(--primaryColor);
+margin-bottom: 1rem;
+
+
+  }
+
+  .prva {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+
+  .druga {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 64%);
+  }
+  .treca {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  .omotac-usluga {
+      text-align:center;
+  }
+
+  .omotac-usluga h2 {
+      margin-bottom: 1rem;
+  }
+
+
+  
+  @media screen and (min-width:776px) {
+    .omotac-usluga {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .usluga-1 {
+        flex:0 0 calc(50% - 1rem);
+    }
+}
+
+@media screen and (min-width:992px) {
+ 
+
+  .usluga-1 {
+      flex:0 0 calc(33.333% - 1rem);
+  }
+}
+
+
+/* ##############################form section###################### */
+
+
+.forma {
+    min-height: 50vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("img/forma4.jpeg");
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    clip-path: polygon(0 10%, 100% 0, 100% 86%, 0 100%);
+    justify-content: center;
+    align-items: center;
+    
+   
+}
+.omotac-forme {
+    text-align: center;
+}
+
+.omotac-forme h1{
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--mainWhite);
+    margin-bottom: 1.5rem;
+    
+
+
+
+}
+
+.omotac-forme .input {
+    background: transparent;
+    outline:none;
+    border:none;
+    border-bottom:1px solid #fff;
+    /* margin-left:-50px; */
+    margin-right: 20px;
+    height: 50px;
+    font-size: 14px;
+}
+
+.input::placeholder {
+   color:#fff;
+   
+}
+
+.submit {
+    background: transparent;
+    color:var(--primaryColor);
+    border: 2px solid var(--primaryColor);
+    padding: 1rem 1.5rem;
+    font-size: 12px;
+    cursor: pointer;
+    /* margin-top: -11px; */
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* ###############################################isotope############################################ */
+
+.omotac-naslova {
+    text-align: left;
+}
+#work .title {
+    flex-direction: row-reverse;
+   
+    margin-top: -20px;
+    margin-bottom: 2rem; 
+    /* border-left: 2px solid grey; */
+  }
+  
+  #work .title-icon .fa {
+    margin-right: 0;
+    margin-left: 10px;
+  }
+  
+  #work .title-text {
+    padding-left: 0;
+    padding-right: 10px;
+    border-right: 3px solid #b5c2b7;
+    border-left: none;
+  }
+
+
+
+
+
+
+
+
+
+.work-center {
+    padding: 40px 0;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  #work img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 3px solid var(--primaryColor);
+  }
+  
+  .button-group {
+    padding: 0 0 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .button-group button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 25px;
+    margin: 10px;
+    border:1px solid var(--primaryColor);
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: var(--primaryColor);
+    background: transparent;
+    outline: none;
+    /* box-shadow: 5px 5px 5px var(--primaryColor); */
+  }
+  
+  .picture-item {
+    width: calc(50% - 20px);
+    margin: 10px;
+  }
+  
+  @media screen and (min-width:992px) {
+    .picture-item {
+      width: calc(25% - 20px);
+    }
+  }
+
+  /* end of isotope */
+  
+
+/* footer */
+
+.footer {
+    border-top: 2px solid var(--primaryColor);
+    height: 150px;
+    background: var(--mainDark);
+    color:var(--mainWhite);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.footer h1 {
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+
+/* #########################brewery strana############################# */
+
+.pivara {
+    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url("img/gvint-pivara.png")center/cover fixed no-repeat;
+}
+
+.pivare {
+    width:90%;
+    margin: 0 auto;
+    
+    /* display: flex; */
+    margin-bottom: 2rem;
+}
+
+/* 
+.pivare img {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    /* padding-top : 1rem; 
+    padding-left: 1rem; 
+   text-align:left;
+    border-radius: 5px;
+} */
+.text-p {
+    text-align: justify;
+    text-indent: 1rem;
+}
+.text-p::first-letter { 
+    font-size: 2rem;
+    color: var(--primaryColor);
+  }
+
+.slika-mes {
+    width:100px;
+    height: 100px;
+    margin:8px;
+    /* height: 100px; */
+    
+
+border-radius: 5px;
+}
+.misicav {
+width:100px;
+height: 100px;
+padding: .5rem;
+border-radius: 5px;
+
+}
+
+.link-od-slike {
+    display: inline-block;
+}
+
+.misicav {
+    /* margin-top:-50px; */
+}
+
+
+
+/* vrste piva */
+
+.pivo-svetlo,
+.pivo-tamno,
+.pivo-psenicno h1 {
+    text-align: center;
+}
+
+.pivo-svetlo,
+.pivo-tamno,
+.pivo-psenicno {
+  width: 90%;
+  margin: 0 auto;
+}
+.slika-mes1 {
+    width: 100%;
+}
+
+
+/* taprooom */
+.taproom {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.taproom h1 {
+    text-align: center;
+    margin-top: 2rem; 
+    font-size: 2rem;
+}
+.carousel {
+    margin-top: -1rem;
+    text-align: center;
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),url("img/gvint-pivara.png")center/cover fixed no-repeat;
+}
+
+.carousel img{ 
+    width:75%;
+   text-align: center;
+
+}
+
+.carousel-image {
+    padding: 1rem;
+}
+
+.carousel-image img {
+  
+    /* border: 1px solid var(--primaryColor); */
+    border-radius: 5px;
+}
+
+.omotac-naslova {
+    margin-bottom: 1rem;
+}
+/* .nesto .omotac-naslova {
+    margin-bottom:1rem !important;
+} */
+
+.m0 {
+    margin-bottom: 1rem;
+}
+
+
+/* about us */
+
+.about-us {
+    width: 90%;
+    margin: 0 auto;
+    text-align: justify;
+    margin-bottom: 8rem;
+}
+
+.about-us h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-size: 2rem; 
+}
+.omotac-naslovaih {
+    margin-top:1rem;
+    display: flex;
+    text-align: center;
+    
+}
+
+.omotac-naslovaih i {
+    margin-left: 1rem;
+    font-size: 3rem;
+    color: var(--primaryColor);
+
+}
+.omotac-omotaca {
+    padding-left:.5rem; 
+    margin-left: .5rem;
+    border-left: 3px solid grey;
+
+}
+
+.omotac-omotaca h1 {
+    text-align: left;
+  
+
+}
+
+.ivan {
+    width:90%;
+    margin: 0 auto;
+    border:1px solid grey;
+    border-radius: 10px;
+    padding: 6px;
+    margin-bottom: 120px;
+   
+
+}
+.ivanova-slika {
+   text-align: center;
+   
+ 
+}
+.ivan img {
+    width: 50%;
+    text-align: center;
+    border-radius: 50%;
+    margin-bottom: -5px;
+    margin-top:-110px;
+    border:1px solid grey;
+
+}
+
+.sanja {
+    background: #fff;
+    
+}
+
+.darko {
+    text-align: left;
+}
